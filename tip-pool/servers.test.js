@@ -10,8 +10,10 @@ describe("Servers test (with setup and tear-down)", function() {
     expect(Object.keys(allServers).length).toEqual(1);
     expect(allServers['server' + serverId].serverName).toEqual('Alice');
   });
-
+// write the hook here to clear any values entered during tests.
   afterEach(function() {
-    // teardown logic
+    serverId = 0;
+    serverTbody.innerHTML = '';
+    allServers = {};
   });
 });
